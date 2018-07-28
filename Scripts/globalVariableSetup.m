@@ -1,4 +1,0 @@
-function globalVariableSetup()
-
-end
-

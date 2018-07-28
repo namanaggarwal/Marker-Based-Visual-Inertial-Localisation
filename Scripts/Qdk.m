@@ -1,4 +1,4 @@
-function QdkMatrix = Qdk(phiMat, Gc, Qc)
+function QdkMatrix = Qdk(phiMat, Gc)
 % This function returns the discrete-time system-noise covariance matrix.
 
 % Remark: T, the sampling time is not taken as an input as it is assumed to
@@ -6,6 +6,7 @@ function QdkMatrix = Qdk(phiMat, Gc, Qc)
 
 %PhiMatrix, GcMatrix and QcMatrix are considered constant over a sampling
 %interval.
-
-QdkMatrix = phiMat*Gc*Qc*(tranpose(Gc))*(transpose(phiMat))*T;
+global Qc;
+global T;
+QdkMatrix = phiMat*Gc*Qc*(Gc.')*(transpose(phiMat))*T;
 end

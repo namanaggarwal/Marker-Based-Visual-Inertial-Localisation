@@ -1,3 +1,0 @@
-function globalVariableSetup()
-
-end
